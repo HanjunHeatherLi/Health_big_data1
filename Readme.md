@@ -19,6 +19,11 @@ Index date: The day on which mortality is to be predicted. Index date is evaluat
 ### Aggregate events
 Vectorization: Aquire feature value pairs(event feature ID, value) for features with the same patient ID, then aggregate features, save in SVMLight Format
 
+SVMLight: target feature:value feature:value ... feature:value
+
+Example: <br/>
+1 2:0.5 3:0.12 10:0.9 2000:0.3 <br/>
+0 4:1.0 78:0.6 1009:0.2
 ## Constructing models 
 Logistic regression, Decision Tree, SVM, Random Forest, Adaboost
 
