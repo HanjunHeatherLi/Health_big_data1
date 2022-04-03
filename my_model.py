@@ -27,7 +27,6 @@ input:
 output: X_train,Y_train,X_test
 '''
 def my_features():
-	#TODO: complete this
 	#training dataset
 	X_train, Y_train = utils.get_data_from_svmlight("../deliverables/features_svmlight.train")
 	#testing data featurize
@@ -64,14 +63,12 @@ def my_features():
 	return X_train,Y_train,X_test
 
 '''
-You can use any model you wish.
 
 input: X_train, Y_train, X_test
 output: Y_pred
 '''
 
 def my_classifier_predictions(X_train,Y_train,X_test):
-	#TODO: complete this
 	from sklearn.metrics import roc_auc_score
 	x_simu, y_simu = utils.get_data_from_svmlight("../deliverables/features_svmlight.train")
 
@@ -154,8 +151,6 @@ def mygradientboost(X_train,Y_train,X_test):
 def main():
 	X_train, Y_train, X_test = my_features()
 	Y_pred = myadaboost(X_train,Y_train,X_test)
-	#Y_pred =my_classifier_predictions(X_train,Y_train,X_test)
-	#Y_pred = mygradientboost(X_train, Y_train, X_test)
 	utils.generate_submission("../deliverables/test_features.txt",Y_pred)
 	#The above function will generate a csv file of (patient_id,predicted label) and will be saved as "my_predictions.csv" in the deliverables folder.
 

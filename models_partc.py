@@ -7,16 +7,12 @@ from sklearn.metrics import *
 
 import utils
 
-# PLEASE USE THE GIVEN FUNCTION NAME, DO NOT CHANGE IT
-# USE THIS RANDOM STATE FOR ALL OF THE PREDICTIVE MODELS
-# THE TESTS WILL NEVER PASS
-RANDOM_STATE = 545510477
+RANDOM_STATE = 5455
 
 #input: X_train, Y_train and X_test
 #output: Y_pred
 def logistic_regression_pred(X_train, Y_train, X_test):
-	#TODO: train a logistic regression classifier using X_train and Y_train. Use this to predict labels of X_test
-	#use default params for the classifier	
+	#train a logistic regression classifier using X_train and Y_train. Use this to predict labels of X_test
 	clf = LogisticRegression(random_state=RANDOM_STATE).fit(X_train, Y_train)
 	return clf.predict(X_test)
 
@@ -24,16 +20,14 @@ def logistic_regression_pred(X_train, Y_train, X_test):
 #input: X_train, Y_train and X_test
 #output: Y_pred
 def svm_pred(X_train, Y_train, X_test):
-	#TODO:train a SVM classifier using X_train and Y_train. Use this to predict labels of X_test
-	#use default params for the classifier
+	#train a SVM classifier using X_train and Y_train. Use this to predict labels of X_test
 	clf = LinearSVC(random_state=RANDOM_STATE).fit(X_train, Y_train)
 	return clf.predict(X_test)
 
 #input: X_train, Y_train and X_test
 #output: Y_pred
 def decisionTree_pred(X_train, Y_train, X_test):
-	#TODO:train a logistic regression classifier using X_train and Y_train. Use this to predict labels of X_test
-	#IMPORTANT: use max_depth as 5. Else your test cases might fail.
+	#train a logistic regression classifier using X_train and Y_train. Use this to predict labels of X_test
 	clf = DecisionTreeClassifier(max_depth=5, random_state=RANDOM_STATE).fit(X_train, Y_train)
 	return clf.predict(X_test)
 
@@ -41,8 +35,7 @@ def decisionTree_pred(X_train, Y_train, X_test):
 #input: Y_pred,Y_true
 #output: accuracy, auc, precision, recall, f1-score
 def classification_metrics(Y_pred, Y_true):
-	#TODO: Calculate the above mentioned metrics
-	#NOTE: It is important to provide the output in the same order
+	#Calculate the above mentioned metrics
 	return accuracy_score(Y_true, Y_pred), roc_auc_score(Y_true, Y_pred), precision_score(Y_true, Y_pred), \
 		   recall_score(Y_true, Y_pred), f1_score(Y_true, Y_pred)
 
