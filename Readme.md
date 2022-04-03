@@ -5,6 +5,15 @@ Using data from MIMIC database, medical treatment during 2000 days before index 
 
 For index date: die patients- 30 days before death; alive patients-last medical event day
 ## Computing basic statistics
+Event count: Number of events recorded for a given patient. Note that every line in
+the input file is an event.
+
+Encounter count: Count of unique dates on which a given patient visited the hospital.
+All the events - DIAG, LAB and DRUG - should be considered as hospital visiting
+events.
+
+Record length: Duration (in number of days) between the first event and last event
+for a given patient.
 ## Preparing the data 
 ### Feature construction
 Observation Window: The time interval you will use to identify relevant events. Only
