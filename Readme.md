@@ -1,7 +1,9 @@
 # Mortality Prediction
 ### Overview
 
-Using MIMIC database
+Using data from MIMIC database, medical treatment during 2000 days before index date as features to predict if patients will be die on day 30 or not.
+
+For index date: die patients- 30 days before death; alive patients-last medical event day
 ## Computing basic statistics
 ## Preparing the data 
 ### Feature construction
